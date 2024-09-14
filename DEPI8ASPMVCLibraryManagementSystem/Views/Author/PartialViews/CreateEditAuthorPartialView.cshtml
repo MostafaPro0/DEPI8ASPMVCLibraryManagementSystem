@@ -1,0 +1,17 @@
+﻿@model DEPI8ASPMVCLibraryManagementSystem.Models.Author
+
+<div class="form-group">
+    <label class="col-form-label" asp-for="Name"></label>
+    <input class="form-control" asp-for="Name" />
+    <span asp-validation-for="Name" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label class="col-form-label" asp-for="Bio"></label>
+    <input class="form-control" asp-for="Bio" />
+    <span asp-validation-for="Bio" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label class="col-form-label" asp-for="DateOfBirth"></label>
+    <input class="form-control" type="date" asp-for="DateOfBirth" />
+    <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+</div>

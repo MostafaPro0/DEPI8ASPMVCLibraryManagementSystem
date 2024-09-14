@@ -1,0 +1,19 @@
+﻿@model DEPI8ASPMVCLibraryManagementSystem.Models.Author
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create New Author</h1>
+
+<br />
+<br />
+
+<form asp-action="Create">
+    <partial name="PartialViews/CreateEditAuthorPartialView" />
+    <input type="submit" value="Submit" class="btn btn-primary m-3" /> |
+    <a asp-action="Index" class="btn btn-light m-3">Back To List</a>
+</form>
+
+@section ValidationScriptSection {
+    <partial name="_ValidationScriptsPartial" />
+}

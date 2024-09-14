@@ -1,0 +1,46 @@
+﻿@model IEnumerable<DEPI8ASPMVCLibraryManagementSystem.Models.Author>
+
+<h2>Author Details</h2>
+
+<a asp-action="Create" class="btn btn-primary">Create New Author</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>ManagerName</th>
+            <th>DateOfBirth</th>
+            <th>Books</th>
+            <th>Details</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var author in Model)
+        {
+            <tr>
+                <td class="align-middle">@author.Name</td>
+                <td class="align-middle">@author.Bio</td>
+                <td class="align-middle">@author.DateOfBirth</td>
+
+                <td class="align-middle">
+                    @if (author.Books?.Any() ?? false)
+                    {
+                        <ul>
+                            @foreach (var book in author.Books)
+                            {
+                                <li>@book.Title (Genre: @book.Genre, PublishedDate: @book.PublishedDate)</li>
+                            }
+                        </ul>
+                    }
+                    else
+                    {
+                        <p>No Books</p>
+                    }
+                </td>
+                    <partial name="_ButtonsPartialView" model="@author.AuthorId" />
+            </tr>
+        }
+    </tbody>
+</table>
